@@ -1,9 +1,20 @@
 
 public class Supplier {
-  //Create private variables for supplierID and supplierName
-  
-    //Create a constructor for the supplier class
+
+  private int supplierID;
+  private String supplierName;
+
+    public Supplier (int supplierID, String supplierName) {
+      this.supplierID = supplierID;
+      this.supplierName = supplierName;
+    }
     
-    //Create getters for the supplierID and supplierName
-   
+    public int getsupplierID() {
+      return supplierID;
+    }
+    
+    public String getsupplierName() {
+      return supplierName;
+    }
+
 }
