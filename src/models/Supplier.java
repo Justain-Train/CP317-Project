@@ -24,15 +24,15 @@ public class Supplier {
       return supplierName;
     }
 
-    public String getaddress() {
+    public String getAddress() {
       return address;
     }
 
-    public String getphone() {
+    public String getPhone() {
       return phone;
     }
 
-    public String getemail() {
+    public String getEmail() {
       return email;
     }
 

@@ -8,7 +8,14 @@ import models.Product;
 import models.Supplier;
 
 /* Uses the FindSupplierId class to find the supplier name 
-for each product and adds the product to the inventory list.*/  // Path: src/GenerateInventory.java
+for each product and adds the product to the inventory list.
+
+* The generateInventory method returns an arraylist of inventory.
+* @param products - the arraylist of products
+* @param suppliers - the arraylist of suppliers
+* @return inventory - the arraylist of inventory
+
+*/ 
 public class GenerateInventory {
   
   public static ArrayList<Inventory> generateInventory(ArrayList<Product> products, ArrayList<Supplier> suppliers) {

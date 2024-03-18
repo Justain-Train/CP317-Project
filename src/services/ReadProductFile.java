@@ -8,6 +8,14 @@ import interfaces.IReadFile;
 import models.Product;
 import models.Supplier;
 
+/* 
+* The readFile method reads the product file and returns an arraylist of products.
+* @param fileName - the name of the file to be read
+* @param suppliers - the arraylist of suppliers
+* @return products - the arraylist of products
+*/  
+
+
 public class ReadProductFile implements IReadFile<Product> {
 
   @Override
