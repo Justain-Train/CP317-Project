@@ -1,11 +1,9 @@
-
 import java.util.ArrayList;
+import java.io.IOException;
 class Main {
 
   public static void main(String[] args) {
-    ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
-    ArrayList<Product> products = new ArrayList<Product>();
-
+    
+    }
   }
-}
 

@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
- public class ReadSupplierFile implements IReadFile {
+ public class ReadSupplierFile implements IReadFile<Supplier> {
 
   /* 
   * This method reads the supplier file and returns an arraylist of suppliers
