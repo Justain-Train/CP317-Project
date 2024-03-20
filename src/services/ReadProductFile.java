@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Scanner;
 import interfaces.IReadFile;
 import models.Product;
-import models.Supplier;
 
 /* 
 * The readFile method reads the product file and returns an arraylist of products.
@@ -19,7 +18,7 @@ import models.Supplier;
 public class ReadProductFile implements IReadFile<Product> {
 
   @Override
-  public ArrayList<Product> readFile(String fileName,ArrayList<Supplier> suppliers) throws IOException {
+  public ArrayList<Product> readFile(String fileName) throws IOException {
     ArrayList<Product> products = new ArrayList<Product>();
   try{
     File file = new File(fileName);

@@ -21,7 +21,7 @@ public class GenerateInventory {
   public static ArrayList<Inventory> generateInventory(ArrayList<Product> products, ArrayList<Supplier> suppliers) {
     ArrayList<Inventory> inventory = new ArrayList<Inventory>();
     for (Product product : products) {
-      String supplierName = FindSupplierID.compare(suppliers, product.getProductID());
+      String supplierName = FindSupplierID.compare(suppliers, product.getSupplierID());
       inventory.add(new Inventory(product.getProductID(), product.getProductName(), product.getQuantity(), product.getPrice(),product.getStatus(),supplierName));
     }
 
