@@ -7,12 +7,6 @@ import java.util.Scanner;
 import interfaces.IReadFile;
 import models.Product;
 
-/* 
-* The readFile method reads the product file and returns an arraylist of products.
-* @param fileName - the name of the file to be read
-* @param suppliers - the arraylist of suppliers
-* @return products - the arraylist of products
-*/  
 
 
 public class ReadProductFile implements IReadFile<Product> {

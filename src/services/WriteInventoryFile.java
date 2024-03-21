@@ -3,19 +3,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import interfaces.IWriteFIle;
+import interfaces.IWriteFile;
 import models.Inventory;
 
 
-public class WriteInventoryFile implements IWriteFIle<Inventory> {
+public class WriteInventoryFile implements IWriteFile<Inventory> {
 
   @Override
-  public void writeFile(ArrayList<Inventory> arrayList) throws IOException {
+  public void writeFile(String fileName, ArrayList<Inventory> inventory) throws IOException {
     try {
       FileWriter writer = new FileWriter("inventoryFile.txt");
-      for (Inventory inventory : arrayList) {
-        writer.write(inventory.getProductID() + "," + inventory.getProductName() + ", " + 
-        inventory.getQuantity() + ", $" + inventory.getPrice() + ", " + inventory.getStatus() + "," + inventory.getSupplierName() + "\n");
+      for (Inventory inventorys : inventory) {
+        writer.write(inventorys.getProductID() + "," + inventorys.getProductName() + ", " + 
+        inventorys.getQuantity() + ", $" + inventorys.getPrice() + ", " + inventorys.getStatus() + "," + inventorys.getSupplierName() + "\n");
       }
       writer.close();
 

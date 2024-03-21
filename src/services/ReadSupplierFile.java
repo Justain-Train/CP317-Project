@@ -10,12 +10,6 @@ import models.Supplier;
 
  public class ReadSupplierFile implements IReadFile<Supplier> {
 
-  /* 
-  * This method reads the supplier file and returns an arraylist of suppliers
-  * @param fileName - the name of the file to be read
-  * @param suppliers - the arraylist of suppliers
-  * @return suppliers - the arraylist of suppliers
-*/
  @Override
   public ArrayList<Supplier> readFile(String fileName) throws IOException{
     ArrayList<Supplier> suppliers = new ArrayList<>();

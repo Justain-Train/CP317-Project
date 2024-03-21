@@ -29,7 +29,7 @@ class Main {
 
     // Try to write the inventory to a file
     try {
-      WriteInventoryFile.writeFile(inventory);
+      WriteInventoryFile.writeFile("Inventory.txt",inventory);
     } catch (IOException e) {
       e.printStackTrace();
     }
