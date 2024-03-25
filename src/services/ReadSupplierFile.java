@@ -23,7 +23,7 @@ import models.Supplier;
           throw new IOException("Invalid supplier file format");
         }
         int supplierID = Integer.parseInt(supplierInfo[0]);
-        suppliers.add(new Supplier(supplierID, supplierInfo[1], supplierInfo[2], supplierInfo[3], supplierInfo[4]));
+        suppliers.add(new Supplier(supplierID, supplierInfo[1].trim(), supplierInfo[2].trim(), supplierInfo[3].trim(), supplierInfo[4].trim()));
       }
       scanner.close();
     } catch (IOException e) {

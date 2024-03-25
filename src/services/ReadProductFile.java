@@ -28,7 +28,7 @@ public class ReadProductFile implements IReadFile<Product> {
       double productPrice = Double.parseDouble(productInfo[3].replace("$", "").trim());
       char productStatus =  productInfo[5].charAt(1);
       int productSupplierID = Integer.parseInt(productInfo[6].trim());
-      products.add(new Product(productID, productInfo[1],productInfo[2], productQuantity, productPrice, productStatus, productSupplierID));
+      products.add(new Product(productID, productInfo[1].trim(),productInfo[2].trim(), productQuantity, productPrice, productStatus, productSupplierID));
     }
       scanner.close();
   } catch (IOException e) {
