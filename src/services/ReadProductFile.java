@@ -20,6 +20,9 @@ public class ReadProductFile implements IReadFile<Product> {
     while (scanner.hasNextLine()) {
       String line = scanner.nextLine();
       String[] productInfo = line.split(",");
+      if (productInfo.length != 7) {
+        throw new IOException("Invalid product file format");
+}
       int productID = Integer.parseInt(productInfo[0]);
       int productQuantity = Integer.parseInt(productInfo[4].trim());
       double productPrice = Double.parseDouble(productInfo[3].replace("$", "").trim());
@@ -27,11 +30,14 @@ public class ReadProductFile implements IReadFile<Product> {
       int productSupplierID = Integer.parseInt(productInfo[6].trim());
       products.add(new Product(productID, productInfo[1],productInfo[2], productQuantity, productPrice, productStatus, productSupplierID));
     }
-    scanner.close();
-
+      scanner.close();
   } catch (IOException e) {
-    System.out.println("An error occurred.");
     e.printStackTrace();
+    throw e;
+  } catch (NumberFormatException e) {
+    e.printStackTrace();
+    throw e;
+  
   }
   return products;
   }

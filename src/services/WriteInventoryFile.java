@@ -12,7 +12,7 @@ public class WriteInventoryFile implements IWriteFile<Inventory> {
   @Override
   public void writeFile(String fileName, ArrayList<Inventory> inventory) throws IOException {
     try {
-      FileWriter writer = new FileWriter("inventoryFile.txt");
+      FileWriter writer = new FileWriter(fileName);
       for (Inventory inventorys : inventory) {
         writer.write(inventorys.getProductID() + "," + inventorys.getProductName() + ", " + 
         inventorys.getQuantity() + ", $" + inventorys.getPrice() + ", " + inventorys.getStatus() + "," + inventorys.getSupplierName() + "\n");
