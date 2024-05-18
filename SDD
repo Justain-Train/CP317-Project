@@ -1,0 +1,240 @@
+Software Project Report
+Inventory File Generator
+Professor Shaun Gao
+CP317 Software Engineering
+Group Assignment
+Wednesday, March 20th, 2024
+Group 22:
+Kaushal Kumar Subramani (169035674)
+Justin Tran (169023990)
+Haider Waheed (210929380)
+Nadir Waheed(201705570)
+1
+CP317 Project Report
+Group - 22
+Table of Contents
+Introduction
+Document Overview
+Purpose of Software
+Software goals
+Software Architecture Overview
+User Interface
+Architectural Design
+SOLID Integration
+Software Design Description
+Input and output component design
+Input Components
+Component Interfaces
+Component Design Description
+File Formatting Interfaces
+Output Components
+Component Interfaces
+Component Design Description
+Citations
+2
+CP317 Project Report
+Group - 22
+INTRODUCTION
+Document overview:
+The objective of this document is to facilitate user understanding regarding the
+software's structure and functionality. It will present an outline of the prominent attributes
+of the product, encompassing user interfaces, architectural design, and fundamental
+software concepts. Visual aids in the form of Unified Modeling Language (UML)
+diagrams will be employed to enhance comprehension of the software development
+process. The primary task of the software entails the reception of user-provided files,
+which are subsequently transformed into formatted documents containing relevant data.
+Our interface will be equipped to accept text-based files for processing into output files.
+We'll mention the software's components and give a detailed explanation of their
+purposes and functions.
+Purpose of software:
+The purpose of our software is to develop an application that will read from the 2 text
+files, and format the data to output into a new file. This process will involve analyzing
+the information of both the input files and reformatting it according to the project
+requirement before we write it into the new file. This software acts as a tool that can
+control the data from the text files and showcases its functions in input/output file
+functions. The output created using 2 text files will follow a desired format, which
+includes only the specified information taken from the 2 input files. Ultimately, the
+created output shows prioritized information from the input files in an easy-to-read
+manner.
+Software goal:
+To achieve optimal performance, this software follows an architecture that uses
+polymorphism, abstraction, and encapsulation. Additionally, considering the offensive
+programming approach for developing this software, its user-friendliness and
+compatibility should ensure seamless operation across Linux, Mac, or Windows
+platforms, minimizing disruptions and technical challenges. Leveraging Java as the
+principal programming language for both design and implementation, the software can
+be readily adapted or modified to cater to individual users' distinct and specific
+requirements. Furthermore, the easy-to-use GUI of the software application should
+make its capabilities easily comprehensible.
+3
+CP317 Project Report
+Group - 22
+SOFTWARE ARCHITECTURE OVERVIEW
+User interface:
+Our project's user interface is designed to cater to the user's ease to give them the best
+and most efficient experience. Our user interface prioritizes efficiency and clarity in its
+interaction with the user by implementing a simplistic structure. The UI features are
+clearly displayed and have organized menus, allowing the user to follow them and find
+their way through the application easily
+Architectural design:
+The architectural design of our software provides high-level capabilities of our system.
+Showcasing how its major components fit together and interact with one another. This
+software's main purpose is designed around it being able to efficiently process data
+from two input files and create a formatted output file with the relevant information. The
+overall system architecture focuses on flexibility and scalability, utilizing a
+component-based approach to facilitate the maintenance of the software with ease.
+Security measures are crucial, as we implement them to prevent manipulation of data
+by using the open-close principle. That way any open file can not be modified but
+extended. To add to our design based on efficiency, the user interfaces are designed
+with a great focus on simplicity and usability. With organized, and easy-to-follow menus
+easy for the user to navigate through. By using a component-based architectural design
+our software encourages adaptability and flexibility allowing us easy customization and
+extensions to any changes in user needs.
+SOLID Integration:
+SOLID stands for Single Responsibility Principle, Open-Close Principle, Liskov
+substitution principle, Interface segregation principle, and Dependency inversion
+principle. “SOLID makes software designs more understandable, flexible, and
+maintainable.” (Gao, Shaun). For this reason, we have integrated the single
+responsibility principle, open-close principle, and interface segregation principle into our
+software. We have ensured that every class has responsibility over a single part of the
+function, each module is capable of being extended by adding new code and not
+changing existing ones, and the interface only shows options necessary for the users
+4
+CP317 Project Report
+Group - 22
+SOFTWARE DESIGN DESCRIPTION
+Our software uses three concepts as mentioned in the project requirements, namely;
+encapsulation, abstraction, and polymorphism to create our interfaces, format the data,
+read the input, and read and write all the files. There will be an individual method for
+each of these processes to ensure proper management and formatting of users' data.
+Furthermore, there is error handling and offensive programming applied throughout the
+program to ensure error messages are reported to the user. This will guarantee the
+program's dependability and stability and give the user error reports if an issue arises.
+Input and Output Component Design:
+We can see with the use-case diagram provided below the input and output component
+design of our software;
+5
+CP317 Project Report
+Group - 22
+Input components
+Component interfaces:
+The only time the software will ask for user input will be when the user input component
+receives the two files required to output the inventory file. Two separate files, named
+"SupplierFile" and "ProductFile," respectively, will each contain data that the software
+will import. These two files’ values will be parsed based on commas and will be in the
+.txt format. The former will include information about the supplier, including name, ID,
+address, and contact details. The product details, including name, ID, price, description,
+and quantity, will be included in the latter. Given below are examples of the data byte
+values and how they're expressed in a tabular form.
+Supplier File Example
+Supplier ID(4 bytes) Supplier
+Name(Max 20
+bytes)
+Address(Max
+15 bytes)
+Phone(Max 15
+bytes)
+Email(Max 20 bytes)
+6789 Hitachi 123 Hitachi
+City
+446-234-2314 support@hitachi.co.jp
+Product File Example
+Product ID(4
+bytes)
+Product
+Name(Ma
+x 10
+bytes)
+Descriptio
+n(Max 15
+bytes)
+Price(8
+bytes)
+Quantity(4
+bytes)
+Status(1
+byte)
+Supplier ID (4
+bytes)
+4234 TV Plate TV $380.5 20 A 6789
+6
+CP317 Project Report
+Group - 22
+Component design description:
+The input component of our software data management system starts the conversion of
+the initial data files into properly structured files. The two main classes in this
+component are ReadSupplierFile and ReadProductFile, each of which has unique
+methods for validating and analyzing data. In simple terms, these two classes read the
+supplier and product files, respectively, and return an ArrayList containing the data
+required to be written to the output concerning the suppliers and products.
+The ReadSupplierFile class is used to analyze the supplier's information. It uses the
+“IReadFile” interface that defines the method readFile and defines the procedure for all
+the file reading operations. The ReadProductFile method starts with the Scanner object
+to read through the SupplierFile. It reads all the lines in the file and splits the string
+based on the commas that separate it in the supplier file to store the supplier's attributes
+such as the ID, name, address, etc. These attributes are then used to express the
+supplier objects which make up the details of the supplier in a format that the rest of the
+app can interact with. Ultimately, the supplier file is read and the supplier information is
+extracted and placed into the Supplier model.
+The ReadProductFile class deals with the product's data input. Similar to the
+ReadSupplierFile, this class also uses the IReadFile interface and its readFile method
+works on the ProductFile.txt. This is used to extract the details of the product such as
+the product ID, name, description, price, quantity, etc. To efficiently and effectively
+achieve this, the ReadProductFile class eliminates the miscellaneous characters such
+as commas, whitespace, and dollar signs, and stores only the necessary text needed to
+describe product information. Once extracted, the information is then added to a
+Product model, similar to the previous class.
+File formatting interfaces:
+The input file formatting interfaces are important parts of our software that manage the
+reading of files and prepare the files of SupplierFile.txt and ProductFile.txt.
+ReadSupplierFiles and ReadProductFIles act as the interfaces that read through the
+files, check the format of the data, and convert each line into an organized structure,
+based on the requirements into Supplier and Product. These interfaces confirm the
+format of the data, making sure it is formatted correctly before they are passed to
+generate inventory which we use to create the final inventory list. This process of input
+file formatting ensures that the results in the final inventory are accurate and reliable.
+7
+CP317 Project Report
+Group - 22
+OUTPUT components
+Component interfaces:
+Once the “SupplierFile” and “ProductFile” files are read, the information is retrieved,
+formatted, and placed in a new table. This data is then outputted to a file called
+“InventoryFile”. This file will consist of the ProductID, Product name, Quantity, Price,
+Status, and Supplier name. Given below is an example of the data byte values and how
+they're expressed in a tabular form;
+Product ID(4
+bytes)
+Product
+Name(Max 10
+bytes)
+Quantity(4
+bytes)
+Price(8
+bytes)
+Status(1 byte) Supplier
+name(Max 20
+bytes)
+4234 TV Plate TV $380.5 20 A
+Component Design Description:
+The product and supplier files are combined in the formatted output of the file to
+produce a concise inventory file that only contains pertinent product information for
+future use. To obtain the required output file, we divided up the methods based on the
+decomposition design principle. “Dividing a complex problem or system into simpler
+components that are easier to conceptualize, comprehend, program, construct, and
+manage is the goal of the decomposition design principle.” (,, 2023) This is illustrated in
+the UML diagram that follows.
+8
+CP317 Project Report
+Group - 22
+Citations
+Online Use Case Diagram Tool. (n.d.). Visual Paradigm Online. Retrieved March 20,
+2024, from
+https://online.visual-paradigm.com/diagrams/features/use-case-diagram-software/
+(n.d.). Wikipedia. Retrieved March 20, 2024, from
+https://www.smartdraw.com/?id=104607&gad_source=1&gclid=CjwKCAjwkuqvBhAQEi
+wA65XxQKP13BWOR3H3Nr_ohGizOuOT-epG6OfCMxBLfKNdrZGAMouKeEZVQxoC1
+LQQAvD_BwEc
+Gao, S. (2024 Mar 20). Software Engineering-week-5-2-Low-level-design-p3
+,. (2023, January 6). , - YouTube. Retrieved March 20, 2024, from
+https://www.sciencedirect.com/science/article/abs/pii/S0890540119301002
